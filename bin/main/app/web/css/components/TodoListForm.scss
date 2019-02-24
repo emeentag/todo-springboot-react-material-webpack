@@ -1,0 +1,26 @@
+#circle-loader {
+  position: absolute;
+}
+
+#btn-dialog-close {
+  align-self: flex-end;  
+  width: 48px;
+  height: 48px;
+  margin: 5px;
+}
+
+#dialog-actions {
+  justify-content: center;
+
+  #btn-send-todo.btn-saved { 
+    background-color: #4caf50;
+    
+    &:hover {
+      backgroundColor: #388e3c;
+    }
+  
+    #save-icon {
+      color: #FFF;
+    }
+  }
+}

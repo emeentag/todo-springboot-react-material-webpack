@@ -1,0 +1,35 @@
+#app {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+
+    .layout {
+        display: flex;
+        flex: 1;
+        max-width: 976px;
+        justify-content: center; 
+        padding: 50px 10px;
+        @media screen and (min-width: 960px){
+            padding: 50px 40px;
+        }
+    
+        .list-item {
+            padding: 10px 0;
+    
+            .sender-text {
+                display: inline;
+            }
+        }
+    }
+
+    .post-item-container {
+        display: flex;
+        flex: 1;
+        position: fixed;
+        bottom: 0;
+        max-width: 976px;
+        margin: 0 auto;
+        padding: 8px 4px;
+        justify-content: center;
+    }
+}
