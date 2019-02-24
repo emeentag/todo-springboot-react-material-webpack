@@ -10,5 +10,7 @@ This is an example project how react works with material ui components api.
 ### How it Works
 #### Development Mode:
 `npm run web:development` starts the client dev server.
+#### Build Mode:
 `web:build"` creates the bundles into `resources/static` folder.
+#### Backend Mode:
 `gradle bootRun` starts the backend server.
