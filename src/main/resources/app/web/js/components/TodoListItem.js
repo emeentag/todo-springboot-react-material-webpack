@@ -19,8 +19,10 @@ export default class TodoListItem extends React.Component {
       <React.Fragment>
         <Typography component="span" color="textPrimary" class="sender-text">
           This is the sender
-                </Typography>
-        <Typography component="span" color="textSecondary" class="sender-text"> — I'll be in your neighborhood doing errands this…</Typography>
+        </Typography>
+        <Typography component="span" color="textSecondary" class="sender-text">
+          — I'll be in your neighborhood doing errands this…
+        </Typography>
       </React.Fragment>
     )
   }
