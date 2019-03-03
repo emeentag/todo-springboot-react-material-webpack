@@ -16,25 +16,26 @@ import SaveIcon from '@material-ui/icons/Save'
 import CloseIcon from '@material-ui/icons/Close'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
+
+let initialState = {
+  openDialog: false,
+  sendSuccess: false,
+  loading: false
+}
 @withMobileDialog()
 export default class TodoListForm extends React.Component {
+
   constructor() {
     super()
 
-    this.state = {
-      openDialog: false,
-      sendSuccess: false,
-      loading: false
-    }
+    this.state = initialState
   }
 
   clickHandler(e) {
     if (e.currentTarget.id == "btn-add-todo-item") {
-      this.setState({
-        openDialog: true
-      })
+      this.setState({...initialState, openDialog: true})
+
     } else if (e.currentTarget.id == "btn-send-todo") {
-      console.log("serdar")
       this.setState({
         loading: true
       })
