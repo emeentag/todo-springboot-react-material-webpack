@@ -16,8 +16,17 @@ public class TodoService {
   TodoRepository todoRepository;
 
   List<Todo> getTodos() {
-    
     List<Todo> todos = todoRepository.findAll();
     return todos;
+  }
+
+  public Optional<Todo> getTodo(Long id) {
+    Optional<Todo> todo = todoRepository.findById(id);
+
+    return todo;
+  }
+
+  public void addTodo(Todo todo) {
+    todoRepository.save(todo);
   }
 }

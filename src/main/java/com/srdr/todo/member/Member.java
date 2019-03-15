@@ -8,46 +8,35 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.srdr.todo.todo.Todo;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 /**
  * Member
  */
 @Entity
 @Table(name="members")
+@Data
 public class Member {
 
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
-  @Getter
-  @Setter
   Long id;
 
   @Column(name="mname", columnDefinition="VARCHAR(100)", nullable=false)
-  @Getter
-  @Setter
   String name;
 
   @Column(name="email", columnDefinition="VARCHAR(255)", nullable=false)
-  @Getter
-  @Setter
   String email;
 
   @Column(name="password", columnDefinition="VARCHAR(255)", nullable=false)
-  @Getter
-  @Setter
   String password;
 
   @OneToMany(mappedBy="member", targetEntity=Todo.class)
-  @Getter
-  @Setter
   List<Todo> todos;
 
   public Member() {
