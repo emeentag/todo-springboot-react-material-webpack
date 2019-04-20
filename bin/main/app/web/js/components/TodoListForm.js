@@ -33,7 +33,7 @@ export default class TodoListForm extends React.Component {
 
   clickHandler(e) {
     if (e.currentTarget.id == "btn-add-todo-item") {
-      this.setState({...initialState, openDialog: true})
+      this.setState({ ...initialState, openDialog: true })
 
     } else if (e.currentTarget.id == "btn-send-todo") {
       this.setState({
@@ -59,10 +59,12 @@ export default class TodoListForm extends React.Component {
     return (
       <React.Fragment>
         <Dialog
+          id="dialog-container"
           fullScreen={this.props.fullScreen}
           open={this.state.openDialog}
           onClose={this.dialogCloseHandler.bind(this)}
           aria-labelledby="responsive-dialog-title"
+          scroll="paper"
         >
           <IconButton
             id="btn-dialog-close"
@@ -91,7 +93,7 @@ export default class TodoListForm extends React.Component {
           <DialogActions id="dialog-actions">
             <Fab id="btn-send-todo"
               class={this.state.sendSuccess && "btn-saved"}
-              disabled={this.state.sendSuccess}
+              disabled={this.state.sendSuccess || this.state.loading}
               color="primary"
               onClick={this.clickHandler.bind(this)}>
               {this.state.sendSuccess
